@@ -12,6 +12,15 @@
 .DS_Store
 *.pem
 
+# secrets / keys
+*.key
+*.p12
+*.pfx
+
+# supabase cli local state
+supabase/.branches/
+supabase/.temp/
+
 # debug
 npm-debug.log*
 yarn-debug.log*
