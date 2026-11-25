@@ -5,7 +5,7 @@ import { getSupabaseServerClient } from '@/lib/supabase/server';
 import type { Client, Operario } from '@/lib/types/database';
 
 export const metadata: Metadata = {
-  title: 'Reportes - MULTI IMPRESORES',
+  title: 'Reportes | Multi Impresores',
 };
 
 export default async function ReportesPage() {

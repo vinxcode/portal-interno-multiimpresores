@@ -15,6 +15,20 @@ interface LoginFieldErrors {
   password?: string;
 }
 
+function describeAuthError(message: string): string {
+  const normalized = message.toLowerCase();
+  if (normalized.includes('email not confirmed') || normalized.includes('email_not_confirmed')) {
+    return 'El usuario existe pero no está confirmado en Supabase. Elimínelo en Authentication > Users y créelo de nuevo con "Auto Confirm User" marcado; luego reejecute bootstrap.sql.';
+  }
+  if (normalized.includes('invalid login credentials')) {
+    return 'Código o contraseña incorrectos. Verifique que el usuario se creó con el email 00126@internal.multiimpresores y que aquí escribe solo el código (00126), no el correo.';
+  }
+  if (normalized.includes('failed to fetch')) {
+    return 'No se pudo conectar con Supabase desde el navegador. Verifique .env y que el proyecto no esté en pausa.';
+  }
+  return `Error de autenticación: ${message}`;
+}
+
 export function LoginForm() {
   const router = useRouter();
   const [userCode, setUserCode] = useState('');
@@ -66,7 +80,7 @@ export function LoginForm() {
       });
 
       if (authError) {
-        setError('Código de usuario o contraseña incorrectos.');
+        setError(describeAuthError(authError.message));
         return;
       }
 

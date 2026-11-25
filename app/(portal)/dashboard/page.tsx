@@ -6,7 +6,7 @@ import { canCreateProducts, canSeePurchasePrice, canUpdateProducts } from '@/lib
 import { requireProfile } from '@/lib/auth/session';
 
 export const metadata: Metadata = {
-  title: 'Dashboard - MULTI IMPRESORES',
+  title: 'Dashboard | Multi Impresores',
 };
 
 export default async function DashboardPage() {

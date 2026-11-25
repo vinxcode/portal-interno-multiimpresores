@@ -5,8 +5,8 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  title: 'MULTI IMPRESORES - Portal Interno',
-  description: 'Gestión de cotizaciones, órdenes de trabajo, abonos y cierre financiero.',
+  title: 'Portal Interno - Multi impresores AH',
+  description: 'Portal interno de Multi impresores Ahuachapan',
 };
 
 export default function RootLayout({

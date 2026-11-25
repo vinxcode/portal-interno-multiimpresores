@@ -5,7 +5,7 @@ import { getSupabaseServerClient } from '@/lib/supabase/server';
 import type { QuoteWithRelations } from '@/lib/types/database';
 
 export const metadata: Metadata = {
-  title: 'Recibos - MULTI IMPRESORES',
+  title: 'Recibos | Multi Impresores',
 };
 
 interface RecibosPageProps {
